@@ -1,61 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Extrator de Comentários do YouTube</title>
     <meta name="description" content="Descubra o que os espectadores estão falando sobre qualquer vídeo do YouTube com nosso Extrator de Comentários. Uma ferramenta essencial para análise de conteúdo e engajamento do público.">
     <meta name="keywords" content="YouTube, Comentários do YouTube, Extrator de Comentários, Análise de Vídeo, Feedback do YouTube, Ferramenta de Análise do YouTube">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="comentsAll.js" defer></script>
-    <link rel="stylesheet" href="../styles.css">
-  </head>
-  <body>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse container" id="navbarNav">
-          <a class="navbar-brand" href="#">YouTube Services</a>
-          <ul class="navbar-nav">
-          </ul>
-          <div class="ml-auto">
-          </div>
+        h2, h5 {
+            color: #f0f0f0;
+        }
+
+        .navbar {
+            background-color: #242424;
+        }
+
+        .navbar-brand {
+            color: #f0f0f0;
+            font-weight: 600;
+        }
+
+        .navbar-brand:hover {
+            color: #ffffff;
+        }
+
+        .form-control {
+            background-color: #2d2d2d;
+            color: #f0f0f0;
+            border: 1px solid #444444;
+        }
+
+        .form-control:focus {
+            border-color: #777777;
+            box-shadow: none;
+            background-color: #2d2d2d;
+            color: #f0f0f0;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .list-group-item {
+            background-color: #2d2d2d;
+            border: 1px solid #444444;
+            color: #f0f0f0;
+        }
+
+        .spinner-border {
+            color: #007bff;
+        }
+
+        article {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #444444;
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container" id="navbarNav">
+        <!-- <a class="navbar-brand" href="#">YouTube Services</a> -->
+        <ul class="navbar-nav">
+        </ul>
+        <div class="ml-auto">
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">Extrator de Comentários de Vídeos YouTube</h2>
-        <h5 class="text-center mb-4">Ferramenta de Extração de Comentários do YouTube </h5>
-        <div class="row justify-content-center">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Extrator de Comentários de Vídeos YouTube</h2>
+    <h5 class="text-center mb-4">Ferramenta de Extração de Comentários do YouTube</h5>
+    <div class="row justify-content-center">
         <div class="col-md-6">
-          <div class="input-group mb-3">
-            <input type="text" id="videoIdInput" class="form-control" placeholder="Insira o ID do vídeo">
-            <button onclick="fetchComments()" id="searchButton" class="btn btn-primary">Buscar Comentários</button>
-          </div>
+            <div class="input-group mb-3">
+                <input type="text" id="videoIdInput" class="form-control" placeholder="Insira o ID do vídeo">
+                <button onclick="fetchComments()" id="searchButton" class="btn btn-primary">Buscar Comentários</button>
+            </div>
 
-          <div id="spinner" class="spinner-border text-primary d-none" role="status">
-          </div>
-          
-          <p id="progressMessage" class="text-center mt-2 d-none">Carregando comentários...</p> <!-- Feedback de progresso -->
-          <p id="totalComments" class="text-center mt-2 d-none"></p> <!-- Número total de comentários carregados -->
-          
-          <button id="downloadCsvButton" class="btn btn-success mb-3 d-none">Baixar Comentários em CSV</button>
-          <ul id="commentsList" class="list-group"></ul>
-        </div>
-        </div>
-
-        <div class="mb-4 mt-5">
-            <article>
-                Explore a interação do público com vídeos específicos usando nosso Extrator de Comentários do YouTube. Simplesmente
-                insira o ID do vídeo desejado e nossa ferramenta acessa a API do YouTube para trazer os comentários relevantes em tempo
-                real.
-            </article>
+            <div id="spinner" class="spinner-border d-none" role="status"></div>
+            
+            <p id="progressMessage" class="text-center mt-2 d-none">Carregando comentários...</p>
+            <p id="totalComments" class="text-center mt-2 d-none"></p>
+            
+            <button id="downloadCsvButton" class="btn btn-success mb-3 d-none" onclick="downloadCommentsCsv()">Baixar Comentários em CSV</button>
+            <ul id="commentsList" class="list-group"></ul>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
-  </body>
+    <div class="mb-4 mt-5">
+        <article>
+            Explore a interação do público com vídeos específicos usando nosso Extrator de Comentários do YouTube. Simplesmente
+            insira o ID do vídeo desejado e nossa ferramenta acessa a API do YouTube para trazer os comentários relevantes em tempo
+            real.
+        </article>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+</body>
 </html>

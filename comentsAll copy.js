@@ -1,3 +1,6 @@
+// const apiKey = 'AIzaSyCWnKedYmWyTolhccOPn8tr7bXBi2IvK4E';
+// const url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${apiKey}&maxResults=100`;
+
 let allComments = []; // Armazena todos os comentários
 
 async function fetchComments(pageToken = '') {
@@ -28,12 +31,8 @@ async function fetchComments(pageToken = '') {
             totalComments.classList.remove('d-none');
             totalComments.textContent = `Total de comentários carregados: ${allComments.length}`;
 
-            // Verifica se há mais páginas de comentários
             if (data.nextPageToken) {
-                // Espera 1 segundo antes de buscar a próxima página
-                setTimeout(async () => {
-                    await fetchComments(data.nextPageToken); // Requisição recursiva para a próxima página
-                }, 500);
+                await fetchComments(data.nextPageToken); // Requisição recursiva para a próxima página
             } else {
                 spinner.classList.add('d-none');
                 progressMessage.textContent = 'Todos os comentários foram carregados.';
@@ -79,36 +78,24 @@ function cleanComment(comment) {
 }
 
 function downloadCommentsCsv() {
-    let csvContent = "Comentários\n"; // Cabeçalho do CSV
+    let csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "Comentários\n"; // Cabeçalho do CSV
 
     allComments.forEach((item) => {
         const comment = cleanComment(item.snippet.topLevelComment.snippet.textDisplay).replace(/(\r\n|\n|\r)/gm, " "); // Remove quebras de linha e limpa o HTML
         csvContent += `"${comment}"\n`; // Adiciona o comentário entre aspas para lidar com vírgulas no texto
     });
 
-    // Verifica se o conteúdo é muito grande e divide em blocos, se necessário
-    if (csvContent.length > 50000) { // Limite de tamanho ajustável, dependendo do navegador
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement("a");
-        const url = URL.createObjectURL(blob);
-        link.setAttribute("href", url);
-        link.setAttribute("download", "comentarios_youtube.csv");
-        document.body.appendChild(link);
-        link.click(); // Inicia o download
-        document.body.removeChild(link); // Remove o link após o download
-    } else {
-        // Cria um link para download diretamente
-        const encodedUri = encodeURI("data:text/csv;charset=utf-8," + csvContent);
-        const link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "comentarios_youtube.csv");
-        document.body.appendChild(link); // Necessário para Firefox
+    // Cria um link para download do CSV
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "comentarios_youtube.csv");
+    document.body.appendChild(link); // Necessário para o FF
 
-        link.click(); // Inicia o download
-        document.body.removeChild(link); // Remove o link após o download
-    }
+    link.click(); // Inicia o download
+    document.body.removeChild(link); // Limpa o link após o download
 }
-
 
 function handleEnter(event) {
     if (event.keyCode === 13) {
