@@ -1,0 +1,107 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# Dependências
+node_modules/
+jspm_packages/
+bower_components/
+
+# Arquivos de build
+dist/
+build/
+out/
+.next/
+
+# Arquivos de cache
+.cache/
+.npm/
+.eslintcache
+.stylelintcache
+
+# IDEs e editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos temporários
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Arquivos de configuração local
+*.local
+
+# Arquivos de teste
+coverage/
+.nyc_output/
+
+# Arquivos Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Arquivos específicos do Windows
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Arquivos específicos do macOS
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Arquivos de backup
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
+
+# Arquivos de mídia e recursos grandes
+*.mp4
+*.mov
+*.wmv
+*.avi
+*.flv
+*.mkv
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.iso

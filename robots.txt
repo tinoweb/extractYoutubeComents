@@ -1,0 +1,91 @@
+# Configurações globais para todos os robôs
+User-agent: *
+
+# Permitir acesso a todas as páginas principais e recursos essenciais
+Allow: /
+Allow: /index.html
+Allow: /sales.html
+Allow: /src/css/styles.css
+Allow: /src/js/coments.js
+Allow: /img/
+
+# Taxa de crawling recomendada
+Crawl-delay: 10
+
+# Sitemap
+Sitemap: https://comentarioyt.tinowebservices.com/sitemap.xml
+
+# Proteção contra cópia e clonagem do projeto
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /README.md
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.gitignore
+Disallow: /.htaccess
+Disallow: /api/
+Disallow: /config/
+Disallow: /setup/
+Disallow: /admin/
+Disallow: /scripts/
+Disallow: /includes/
+Disallow: /modules/
+Disallow: /vendor/
+Disallow: /components/
+
+# Impedir cache de arquivos temporários
+Disallow: /*.tmp$
+Disallow: /*.temp$
+
+# Bloquear ferramentas de cópia e web crawlers maliciosos
+User-agent: HTTrack
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: WebReaper
+Disallow: /
+
+User-agent: WebStripper
+Disallow: /
+
+User-agent: Web Downloader
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: WebCopy
+Disallow: /
+
+User-agent: Teleport
+Disallow: /
+
+User-agent: WebSnatcher
+Disallow: /
+
+User-agent: Offline Explorer
+Disallow: /
+
+User-agent: Wget
+Disallow: /
+
+User-agent: Curl
+Disallow: /
+
+# Configurações específicas para bots principais
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Aviso Legal
+# Este site e seu conteúdo são protegidos por direitos autorais.
+# Qualquer tentativa de cópia, clonagem ou reprodução não autorizada
+# será tratada de acordo com as leis de propriedade intelectual.

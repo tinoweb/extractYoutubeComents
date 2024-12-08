@@ -1,5 +1,9 @@
 async function fetchComments() {
-    const videoId = document.getElementById('videoIdInput').value;
+    const videoUrl = document.getElementById('videoIdInput').value;
+    // Extraindo o ID do vídeo da URL
+    const urlParams = new URLSearchParams(new URL(videoUrl).search);
+    const videoId = urlParams.get('v');
+
     const apiKey = 'AIzaSyCWnKedYmWyTolhccOPn8tr7bXBi2IvK4E';
     const url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${apiKey}&maxResults=100`;
 

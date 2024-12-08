@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Extrator de Comentários do YouTube PRO | Extraia Todos os Comentários</title>
+    <meta name="description" content="Ferramenta profissional para extrair comentários do YouTube. Baixe todos os comentários de qualquer vídeo em segundos. Ideal para análise de mercado, engajamento e pesquisa.">
+    <meta name="keywords" content="extrator de comentários youtube, youtube comments, baixar comentários youtube, extrair comentários, ferramenta youtube, análise de comentários, youtube marketing, youtube engagement, youtube analytics, youtube data, youtube automation, youtube professional tools, youtube comments extractor">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Extrator de Comentários do YouTube PRO">
+    <meta property="og:description" content="Extraia todos os comentários de qualquer vídeo do YouTube em segundos. Ferramenta profissional para análise e marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seudominio.com/sales.html">
+    <meta property="og:image" content="https://seudominio.com/img/preview.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Extrator de Comentários do YouTube PRO">
+    <meta name="twitter:description" content="Extraia todos os comentários de qualquer vídeo do YouTube em segundos. Ferramenta profissional para análise e marketing.">
+    <meta name="twitter:image" content="https://seudominio.com/img/preview.jpg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="Seu Nome ou Empresa">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#1a237e">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Extrator de Comentários do YouTube PRO",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows",
+        "offers": {
+            "@type": "Offer",
+            "price": "69.90",
+            "priceCurrency": "BRL"
+        },
+        "description": "Ferramenta profissional para extrair e analisar comentários do YouTube. Extraia todos os comentários de qualquer vídeo em segundos.",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1a237e, #0d47a1, #2962ff);
+            --secondary-gradient: linear-gradient(135deg, #1f2937, #374151);
+            --accent-gradient: linear-gradient(45deg, #ffd700, #ffa000);
+        }
+        
+        body {
+            background: #0d1117;
+            color: #e1e5ea;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .hero-section {
+            background: var(--primary-gradient);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="none"/><path d="M0 0l20 20M20 0L0 20" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .feature-card {
+            background: var(--secondary-gradient);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #2962ff;
+            box-shadow: 0 15px 40px rgba(41,98,255,0.2);
+        }
+
+        .price-tag {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-tag::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-button {
+            background: var(--accent-gradient);
+            color: #000;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(255,215,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255,215,0,0.4);
+            color: #000;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .testimonial-card {
+            background: var(--secondary-gradient);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(41,98,255,0.5);
+        }
+
+        .countdown {
+            background: linear-gradient(45deg, #d32f2f, #f44336);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guarantee-section {
+            background: var(--secondary-gradient);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guarantee-badge {
+            filter: drop-shadow(0 5px 15px rgba(255,215,0,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .guarantee-badge:hover {
+            transform: scale(1.1);
+        }
+
+        .highlight-text {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .benefits-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefits-list i {
+            color: #ffd700;
+            margin-right: 10px;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                margin: 10px auto;
+                border-radius: 10px;
+            }
+            
+            .video-container iframe {
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="hero-title" data-aos="fade-down">Extrator de Comentários PRO</h1>
+            <p class="lead mb-4" data-aos="fade-up"> Desbloqueie o Poder Total dos Comentários do YouTube!</p>
+            <h2 class="h4 mb-5" data-aos="fade-up" data-aos-delay="100">
+                Extraia <span class="highlight-text">TODOS</span> os comentários de qualquer vídeo em questão de minutos!
+            </h2>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="video-container">
+                        <iframe 
+                            id="youtubeVideo"
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/MZPGwrj7rcQ?enablejsapi=1" 
+                            title="EXTRATOR DE COMENTARIO DO YOUTUBE" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen
+                            style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Por que o Extrator PRO vai Revolucionar sua Análise de Comentários?</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <i class="fas fa-infinity feature-icon"></i>
+                        <h3>Sem Limites!</h3>
+                        <p>Extraia milhares de comentários em segundos. Chega de limitações! Acesse 100% dos comentários de qualquer vídeo.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <i class="fas fa-desktop feature-icon"></i>
+                        <h3>Software Desktop</h3>
+                        <p>Trabalhe offline com máxima velocidade. Instale uma vez e use para sempre, sem depender de conexão constante.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <h3>Ultra Rápido</h3>
+                        <p>Tecnologia otimizada para extrair milhares de comentários em questão de segundos. Economize horas de trabalho!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5 bg-dark">
+        <div class="container text-center">
+            <div class="countdown" data-aos="fade-down">
+                <h3 class="mb-0"><i class="fas fa-clock"></i> OFERTA ESPECIAL - Por Tempo Limitado!</h3>
+            </div>
+            <div class="price-tag mx-auto" style="max-width: 500px;" data-aos="zoom-in">
+                <h2 class="display-4 mb-3">R$ 69,90</h2>
+                <p class="lead mb-4">
+                    <s class="text-muted">De R$ 197,00</s><br>
+                    <span class="highlight-text">Economia de 65%!</span>
+                </p>
+                <ul class="benefits-list list-unstyled text-start mb-4">
+                    <li><i class="fas fa-check-circle"></i> Licença vitalícia - Pague uma vez, use para sempre!</li>
+                    <li><i class="fas fa-check-circle"></i> Atualizações gratuitas incluídas</li>
+                    <li><i class="fas fa-check-circle"></i> Suporte prioritário 24/7</li>
+                    <li><i class="fas fa-check-circle"></i> Extração ilimitada de comentários</li>
+                    <li><i class="fas fa-check-circle"></i> Download em formato Excel/CSV</li>
+                </ul>
+                <a href="https://checkout.perfectpay.com.br/pay/PPU38CODUP7" class="cta-button floating">
+                    QUERO DESBLOQUEAR AGORA! 🚀
+                </a>
+                <p class="mt-3">
+                    <i class="fas fa-lock"></i> Pagamento 100% seguro via PerfectPay<br>
+                    <small>Cartão de crédito, boleto ou PIX</small>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">O que Dizem Nossos Clientes Satisfeitos</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left fa-2x mb-3" style="color: #ffd700;"></i>
+                        <p>"Incrível! Extraí mais de 10 mil comentários em menos de 5 minutos. Economizei dias de trabalho manual!"</p>
+                        <footer class="text-end">
+                            <strong class="highlight-text">João Silva</strong><br>
+                            Marketing Digital
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left fa-2x mb-3" style="color: #ffd700;"></i>
+                        <p>"A melhor ferramenta para análise de comentários do YouTube. Revolucionou minha estratégia de conteúdo!"</p>
+                        <footer class="text-end">
+                            <strong class="highlight-text">Maria Santos</strong><br>
+                            Influencer
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left fa-2x mb-3" style="color: #ffd700;"></i>
+                        <p>"Uso diariamente para monitorar meu canal. A versão PRO é simplesmente fantástica, vale cada centavo!"</p>
+                        <footer class="text-end">
+                            <strong class="highlight-text">Pedro Oliveira</strong><br>
+                            YouTuber
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/726/726476.png" alt="Garantia de 7 dias" class="guarantee-badge mb-4" data-aos="zoom-in">
+            <h2 data-aos="fade-up">Garantia Incondicional de 7 Dias</h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                Use o Extrator PRO por 7 dias. Se não ficar 100% satisfeito,<br>
+                devolvemos todo seu dinheiro. Sem perguntas, sem burocracia!
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4" data-aos="fade-up">Pronto para Revolucionar sua Análise de Comentários?</h2>
+            <div data-aos="zoom-in">
+                <a href="https://checkout.perfectpay.com.br/pay/PPU38CODUP7" class="cta-button">
+                    QUERO COMEÇAR AGORA! 🚀
+                </a>
+                <p class="mt-3">
+                    <span class="highlight-text">Pagamento único</span> - Sem mensalidades<br>
+                    <small>Aproveite o desconto especial antes que acabe!</small>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        // YouTube Player API
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtubeVideo', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Add click event listener to the document
+            document.addEventListener('click', function startVideoOnce() {
+                player.playVideo();
+                // Remove the event listener after first click
+                document.removeEventListener('click', startVideoOnce);
+            }, { once: true });
+
+            // Add scroll event listener to the document
+            document.addEventListener('scroll', function startVideoOnce() {
+                player.playVideo();
+                // Remove the event listener after first scroll
+                document.removeEventListener('scroll', startVideoOnce);
+            }, { once: true });
+        }
+    </script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
